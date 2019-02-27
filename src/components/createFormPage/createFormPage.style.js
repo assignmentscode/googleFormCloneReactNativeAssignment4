@@ -10,6 +10,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 80,
+    paddingRight: 10,
+    paddingLeft: 10,
+  },
+  formNameInput: {
+    flexGrow: 1,
+    width: '100%',
+    textAlign: 'center',
+    borderBottomColor: 'gray',
+    borderBottomWidth: 2,
   },
   addFieldContainer: {
     height: 50,

@@ -29,10 +29,13 @@ export default class LandingPage extends Component {
   render() {
     const { formNames } = this.state;
     const formNameCards = formNames.map(formName => (
-      <LandingPageCard
-        data={formName}
-        key={formName.id}
-      />
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('PersonalDetails')}>
+        <LandingPageCard
+          data={formName}
+          key={formName.id}
+        />
+      </TouchableOpacity>
+
     ));
     return (
       <SafeAreaView>

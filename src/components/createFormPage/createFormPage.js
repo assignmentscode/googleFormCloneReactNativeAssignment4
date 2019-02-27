@@ -11,11 +11,20 @@ export default class CreateFormPage extends Component {
       headerTitleStyle: { color: 'white', fontWeight: '400' },
     };
 
+    state = {
+      formName: 'Form Name',
+    }
+
     render() {
+      const { formName } = this.state;
       return (
         <View style={styles.createFormContainer}>
           <View style={styles.formNameContainer}>
-            <Text>FORM NAME</Text>
+            <TextInput
+              style={styles.formNameInput}
+              onChangeText={text => this.setState({ formName: text })}
+              value={formName}
+            />
           </View>
           <TouchableOpacity>
             <View style={styles.addFieldContainer}>
