@@ -5,7 +5,7 @@ import styles from './landingPageCard.style';
 
 export default class LandingPageCard extends Component {
   render() {
-    const { data } = this.props;
+    const { data = { formName: '', createdAt: '', id: '' } } = this.props;
     const { formName = 'Feedback', createdAt = '10/02/2017' } = data;
     return (
       <View style={styles.card}>

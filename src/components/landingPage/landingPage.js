@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View, ScrollView, Image, SafeAreaView,
+  View, ScrollView, Image, SafeAreaView, TouchableOpacity,
 } from 'react-native';
 import styles from './landingPage.style';
 import LandingPageCard from '../landingPageCard/landingPageCard';
@@ -25,6 +25,7 @@ export default class LandingPage extends Component {
 
   storeData = responseObject => this.setState({ formNames: responseObject });
 
+
   render() {
     const { formNames } = this.state;
     const formNameCards = formNames.map(formName => (
@@ -41,9 +42,14 @@ export default class LandingPage extends Component {
               {formNameCards}
             </View>
             <View style={styles.createFormIconContainer}>
-              <Image
-                source={plusIcon}
-              />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('CreateForm')}
+              >
+                <Image
+                  source={plusIcon}
+                />
+              </TouchableOpacity>
+
             </View>
           </View>
         </ScrollView>
