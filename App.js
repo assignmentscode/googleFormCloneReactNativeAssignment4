@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import styles from './App.style';
-
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import LandingPage from './src/components/landingPage/landingPage';
 
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-      </View>
-    );
+    return <AppContainer />;
   }
 }
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: LandingPage,
+  },
+});
+
+const AppContainer = createAppContainer(AppNavigator);
