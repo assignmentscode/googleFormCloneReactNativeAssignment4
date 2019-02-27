@@ -16,7 +16,7 @@ export default class LandingPage extends Component {
   };
 
   state = {
-    formNames: [{ id: '', formName: '', createdAt: '' }],
+    formNames: [],
   }
 
   componentDidMount() {
@@ -26,14 +26,19 @@ export default class LandingPage extends Component {
   storeData = responseObject => this.setState({ formNames: responseObject });
 
   render() {
-    // const { formNames } = this.state;
-    // const formNameCards = formNames.map(formName => (<LandingPage data={formName}/>));
+    const { formNames } = this.state;
+    const formNameCards = formNames.map(formName => (
+      <LandingPageCard
+        data={formName}
+        key={formName.id}
+      />
+    ));
     return (
       <SafeAreaView>
         <ScrollView>
           <View style={styles.landingPageContainer}>
             <View style={styles.landingPageCards}>
-              <LandingPageCard />
+              {formNameCards}
             </View>
             <View style={styles.createFormIconContainer}>
               <Image
