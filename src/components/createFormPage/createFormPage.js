@@ -15,6 +15,7 @@ export default class CreateFormPage extends Component {
       formName: 'Form Name',
     }
 
+
     render() {
       const { formName } = this.state;
       return (
@@ -31,7 +32,12 @@ export default class CreateFormPage extends Component {
               <Text style={styles.addFieldText}>ADD FIELD</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TextInput
+            style={styles.formNameInput}
+            onChangeText={text => this.setState({ formName: text })}
+            value="FIELD NAME"
+          />
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
             <View style={styles.saveButtonContainer}>
               <Text>Save</Text>
             </View>
