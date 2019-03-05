@@ -20,7 +20,7 @@ export default class LandingPage extends Component {
   }
 
   componentDidMount() {
-    getData('http://10.0.2.2:8080/formNames').then(result => this.storeData(result.data));
+    getData('http://192.168.43.67:8080/formNames').then(result => this.storeData(result.data));
   }
 
   storeData = responseObject => this.setState({ formNames: responseObject });
